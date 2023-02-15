@@ -172,6 +172,7 @@ use constas::*;
 //     return Err(&format!("Invalid path: first error at char {cursor}"));
 // }
 
+#[allow(unused)]
 const TEXT1: &str = r##"<div class="chartdiv" style="width: 100%; height: 300px; overflow: hidden; text-align: left;" id="chartdiv-projection-projekcia"><div class="amcharts-main-div" style="position: relative; width: 100%; height: 100%;"><div class="amcharts-chart-div" style="overflow: hidden; position: absolute; text-align: left; width: 489.125px; height: 300px; padding: 0px; left: 0px;"><svg version="1.1" style="position: absolute; width: 489.125px; height: 300px; top: 0.1875px; left: 0px;"><desc>JavaScript chart by amCharts 3.21.2</desc><g><path cs="100,100" d="M0.5,0.5 L488.5,0.5 L488.5,299.5 L0.5,299.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L354.5,0.5 L354.5,218.5 L0.5,218.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(114,20)"></path></g><g><g transform="translate(114,20)" visibility="visible"><g><path cs="100,100" d="M0.5,218.5 L6.5,218.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(-6,0)"></path><path cs="100,100" d="M0.5,218.5 L0.5,218.5 L354.5,218.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,164.5 L6.5,164.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(-6,0)"></path><path cs="100,100" d="M0.5,164.5 L0.5,164.5 L354.5,164.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,109.5 L6.5,109.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(-6,0)"></path><path cs="100,100" d="M0.5,109.5 L0.5,109.5 L354.5,109.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,55.5 L6.5,55.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(-6,0)"></path><path cs="100,100" d="M0.5,55.5 L0.5,55.5 L354.5,55.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,0.5 L6.5,0.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(-6,0)"></path><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L354.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g></g><g transform="translate(114,20)" visibility="visible"><g><path cs="100,100" d="M0.5,0.5 L0.5,5.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(0,218)"></path><path cs="100,100" d="M0.5,218.5 L0.5,218.5 L0.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M118.5,0.5 L118.5,5.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(0,218)"></path><path cs="100,100" d="M118.5,218.5 L118.5,218.5 L118.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M236.5,0.5 L236.5,5.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(0,218)"></path><path cs="100,100" d="M236.5,218.5 L236.5,218.5 L236.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M354.5,0.5 L354.5,5.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(0,218)"></path><path cs="100,100" d="M354.5,218.5 L354.5,218.5 L354.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g></g></g><g></g><g></g><g></g><g></g><g clip-path="url(#AmChartsEl-4)"><g transform="translate(114,20)"><g></g><g><path cs="100,100" d="M0.5,218.5 L12.3,217.29141 L24.1,215.93778 L35.9,214.42173 L47.7,212.72374 L59.5,210.822 L71.3,208.69205 L83.1,206.3065 L94.9,203.63469 L106.7,200.64226 L118.5,197.29074 L130.3,193.53704 L142.1,189.33289 L153.9,184.62424 L165.7,179.35056 L177.5,173.44404 L189.3,166.82873 L201.1,159.41958 L212.9,151.12134 L224.7,141.82731 L236.5,131.41799 L248.3,119.75956 L260.1,106.70212 L271.9,92.07778 L283.7,75.69852 L295.5,57.35375 M0,0 L0,0" fill="none" stroke-width="2" stroke-opacity="0.9" stroke="#6840b4" stroke-linejoin="round"></path></g><g></g></g><g transform="translate(114,20)"><g></g><g><path cs="100,100" d="M0.5,218.5 L12.3,217.4209 L24.1,216.3418 L35.9,215.2627 L47.7,214.1836 L59.5,213.1045 L71.3,212.0254 L83.1,210.9463 L94.9,209.8672 L106.7,208.7881 L118.5,207.709 L130.3,206.6299 L142.1,205.5508 L153.9,204.4717 L165.7,203.3926 L177.5,202.3135 L189.3,201.2344 L201.1,200.1553 L212.9,199.0762 L224.7,197.9971 L236.5,196.918 L248.3,195.8389 L260.1,194.7598 L271.9,193.6807 L283.7,192.6016 L295.5,191.5225 M0,0 L0,0" fill="none" stroke-width="2" stroke-opacity="0.9" stroke="#d5bee8" stroke-linejoin="round"></path></g><g></g></g></g><g clip-path="url(#AmChartsEl-6)"></g><g><path cs="100,100" d="M0.5,218.5 L0.5,0.5 L0.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#000000" transform="translate(114,20)"></path><path cs="100,100" d="M0.5,218.5 L354.5,218.5 L354.5,218.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#000000" transform="translate(114,20)"></path><g><path cs="100,100" d="M0.5,0.5 L0.5,218.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(114,20)" visibility="visible"></path></g><g><path cs="100,100" d="M0.5,0.5 L354.5,0.5" fill="none" stroke-width="1" stroke-opacity="100" stroke="#000000" transform="translate(114,238)" visibility="visible"></path></g></g><g></g><g></g><g clip-path="url(#AmChartsEl-5)"><g transform="translate(114,20)"><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(0,218)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(12,217)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(24,215)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(35,214)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(47,212)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(59,210)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(71,208)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(83,206)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(94,203)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(106,200)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(118,197)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(130,193)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(142,189)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(153,184)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(165,179)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(177,173)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(189,166)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(201,159)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(212,151)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(224,141)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(236,131)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(248,119)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(260,106)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(271,92)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(283,75)" aria-label="Account Balance  "></circle><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#6840b4" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(295,57)" aria-label="Account Balance  "></circle></g><g transform="translate(114,20)"><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(0,218)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(12,217)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(24,216)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(35,215)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(47,214)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(59,213)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(71,212)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(83,210)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(94,209)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(106,208)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(118,207)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(130,206)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(142,205)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(153,204)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(165,203)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(177,202)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(189,201)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(201,200)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(212,199)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(224,197)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(236,196)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(248,195)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(260,194)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(271,193)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(283,192)" aria-label="Cumulative Contribution  "></circle><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#d5bee8" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(295,191)" aria-label="Cumulative Contribution  "></circle></g></g><g><g></g></g><g><g transform="translate(114,20)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,217)"><tspan y="6" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,163)"><tspan y="6" x="0">5,000,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,108)"><tspan y="6" x="0">10,000,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,54)"><tspan y="6" x="0">15,000,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1)"><tspan y="6" x="0">20,000,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="12px" opacity="1" font-weight="bold" text-anchor="middle" transform="translate(-93,109) rotate(-90)"><tspan y="6" x="0">Value in ?</tspan></text></g><g transform="translate(114,20)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(0,235.5)"><tspan y="6" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(118,235.5)"><tspan y="6" x="0">10</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(236,235.5)"><tspan y="6" x="0">20</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(354,235.5)"><tspan y="6" x="0">30</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="12px" opacity="1" font-weight="bold" text-anchor="middle" transform="translate(177,261)"><tspan y="6" x="0">Duration in years</tspan></text></g></g><g></g><g transform="translate(114,20)"></g><g></g><g></g><clipPath id="AmChartsEl-4"><rect x="114" y="20" width="355" height="219" rx="0" ry="0" stroke-width="0"></rect></clipPath><clipPath id="AmChartsEl-5"><rect x="114" y="20" width="355" height="219" rx="0" ry="0" stroke-width="0"></rect></clipPath><clipPath id="AmChartsEl-6"><rect x="114" y="20" width="355" height="219" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg></div><div class="amChartsLegend amcharts-legend-div" style="overflow: hidden; position: relative; text-align: left; width: 190.875px; height: 66px; left: 489.125px; top: 117px;"><svg version="1.1" style="position: absolute; width: 245.875px; height: 66px;"><desc>JavaScript chart by amCharts 3.21.2</desc><g transform="translate(10,0)"><path cs="100,100" d="M0.5,0.5 L171.5,0.5 L171.5,65.5 L0.5,65.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><g transform="translate(0,11)"><g cursor="pointer" aria-label="Account Balance" transform="translate(0,0)"><g><path cs="100,100" d="M0.5,8.5 L32.5,8.5" fill="none" stroke-width="2" stroke-opacity="0.9" stroke="#6840b4"></path><circle r="4" cx="0" cy="0" fill="#6840b4" stroke="#000000" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(17,8)"></circle></g><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="start" transform="translate(37,7)"><tspan y="6" x="0">Account Balance</tspan></text><rect x="32" y="0" width="134.375" height="18" rx="0" ry="0" stroke-width="0" stroke="none" fill="#fff" fill-opacity="0.005"></rect></g><g cursor="pointer" aria-label="Cumulative Contribution" transform="translate(0,28)"><g><path cs="100,100" d="M0.5,8.5 L32.5,8.5" fill="none" stroke-width="2" stroke-opacity="0.9" stroke="#d5bee8"></path><circle r="4" cx="0" cy="0" fill="#d5bee8" stroke="#000000" fill-opacity="1" stroke-width="2" stroke-opacity="0" transform="translate(17,8)"></circle></g><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="start" transform="translate(37,7)"><tspan y="6" x="0">Cumulative Contribution</tspan></text><rect x="32" y="0" width="134.375" height="18" rx="0" ry="0" stroke-width="0" stroke="none" fill="#fff" fill-opacity="0.005"></rect></g></g></g></svg></div></div></div>"##;
 
 // #[rustfmt::skip]
@@ -222,6 +223,7 @@ mod consts {
     ";
     }
 }
+#[allow(unused)]
 use consts::*;
 
 pub fn matcher(capture: &Captures) -> Vec<bool> {
@@ -250,28 +252,23 @@ mod svg_path {
     // ShorthandQuadraticBézierCurveTo *[Tt] *, *(?:x *, *y)+ *
     // EllipticalArc *[Aa] *, *(?:rx *, *ry *, *x-axis-rotation *, *large-arc-flag *, *sweep-flag *, *x *, *y)+ *
 
-    use std::{fmt::Display, ops::Deref};
+    use std::fmt::Display;
 
     use regex::{Captures, Regex, RegexSet};
 
-    #[allow(unused)]
-    pub const PATH_SVG_ABSOLUTE: &str = " *[MLSQLHVCSQTAZ].*";
-    pub const PATH_SVG_RELATIVE: &str = " *[mlsqlhvcsqtaz].*";
-
-    pub const MOVE_TO: &str =
-        r" *(?P<marker>[Mm])[,\s]*(?:(?P<x>-?[0-9]*\.?\d+)[,\s]*(?P<y>-?[0-9]*\.?\d+))+ *";
+    pub const MOVE_TO: &str = r" *(?P<marker>[Mm])[,\s]*(?:(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.)))+ *";
     pub const CLOSE_PATH: &str = r" *(?P<marker>[Zz]) *";
-    pub const LINE_TO: &str =
-        r" *(?P<marker>[Ll])[,\s]*(?:(?P<x>-?[0-9]*\.?\d+)[,\s]*(?P<y>-?[0-9]*\.?\d+))+ *";
-    pub const HORIZONTAL_LINE_TO: &str = r" *(?P<marker>[Hh])[,\s]*(?P<x>-?[0-9]*\.?\d+)+ *";
-    pub const VERTICAL_LINE_TO: &str = r" *(?P<marker>[Vv])[,\s]*(?P<y>-?[0-9]*\.?\d+)+ *";
+    pub const LINE_TO: &str = r" *(?P<marker>[Ll])[,\s]*(?:(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.)))+ *";
+    pub const HORIZONTAL_LINE_TO: &str =
+        r" *(?P<marker>[Hh])[,\s]*(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))+ *";
+    pub const VERTICAL_LINE_TO: &str =
+        r" *(?P<marker>[Vv])[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))+ *";
     // let correct_complex_path = "M10,10 l 5,7 C-5,7.2,.3-16,24,10  z";
-    pub const CURVE_TO: &str = r" *(?P<marker>[Cc])[,\s]*(?:(?P<x1>-?[0-9]*\.?\d+)[,\s]*(?P<y1>-?[0-9]*\.?\d+)[,\s]*(?P<x2>-?[0-9]*\.?\d+)[,\s]*(?P<y2>-?[0-9]*\.?\d+)[,\s]*(?P<x>-?[0-9]*\.?\d+)[,\s]*(?P<y>-?[0-9]*\.?\d+))+ *";
-    pub const SHORTHAND_CURVE_TO: &str = r" *(?P<marker>[Ss])[,\s]*(?:(?P<x2>-?[0-9]*\.?\d+)[,\s]*(?P<y2>-?[0-9]*\.?\d+)[,\s]*(?P<x>-?[0-9]*\.?\d+)[,\s]*(?P<y>-?[0-9]*\.?\d+))+ *";
-    pub const QUADRATIC_BÉZIER_CURVE_TO: &str = r" *(?P<marker>[Qq])[,\s]*(?:(?P<x1>-?[0-9]*\.?\d+)[,\s]*(?P<y1>-?[0-9]*\.?\d+)[,\s]*(?P<x>-?[0-9]*\.?\d+)[,\s]*(?P<y>-?[0-9]*\.?\d+))+ *";
-    pub const SHORTHAND_QUADRATIC_BÉZIER_CURVE_TO: &str =
-        r" *(?P<marker>[Tt])[,\s]*(?:(?P<x>-?[0-9]*\.?\d+)[,\s]*(?P<y>-?[0-9]*\.?\d+))+ *";
-    pub const ELLIPTICAL_ARC: &str = r" *(?P<marker>[Aa])[,\s]*(?:(?P<rx>-?[0-9]*\.?\d+)[,\s]*(?P<ry>-?[0-9]*\.?\d+)[,\s]*(?P<x_axis_rotation>-?[0-9]*\.?\d+)[,\s]+(?P<large_arc_flag>[01])[,\s]+(?P<sweep_flag>[01])[,\s]*(?P<x>-?[0-9]*\.?\d+)[,\s]*(?P<y>-?[0-9]*\.?\d+))+ *";
+    pub const CURVE_TO: &str = r" *(?P<marker>[Cc])[,\s]*(?:(?P<x1>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y1>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<x2>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y2>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.)))+ *";
+    pub const SHORTHAND_CURVE_TO: &str = r" *(?P<marker>[Ss])[,\s]*(?:(?P<x2>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y2>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.)))+ *";
+    pub const QUADRATIC_BÉZIER_CURVE_TO: &str = r" *(?P<marker>[Qq])[,\s]*(?:(?P<x1>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y1>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.)))+ *";
+    pub const SHORTHAND_QUADRATIC_BÉZIER_CURVE_TO: &str = r" *(?P<marker>[Tt])[,\s]*(?:(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.)))+ *";
+    pub const ELLIPTICAL_ARC: &str = r" *(?P<marker>[Aa])[,\s]*(?:(?P<rx>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<ry>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<x_axis_rotation>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]+(?P<large_arc_flag>[01])[,\s]+(?P<sweep_flag>[01])[,\s]*(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.)))+ *";
 
     pub const LIST_REGEX_PATH_SVG: [(PathOps<Option<&'static str>>, &'static str); 10] = [
         (PathOps::MoveTo { x: None, y: None }, MOVE_TO),
@@ -388,91 +385,180 @@ mod svg_path {
     }
 
     #[derive(Debug)]
-    pub struct FullOpsPathSvg {
+    pub struct ResultOpsPathSvg {
         relative: bool,
         start: usize,
+        #[allow(unused)]
         end: usize,
         carac: PathOps<String>,
     }
+    #[derive(Debug)]
+    pub enum SVGPathOps {
+        Relative(PathOps<f64>),
+        Absolute(PathOps<f64>),
+    }
 
-    impl Into<(bool, PathOps<f64>)> for FullOpsPathSvg {
-        fn into(self) -> (bool, PathOps<f64>) {
-            (
-                self.relative,
-                match self.carac {
-                    PathOps::MoveTo { x, y } => PathOps::MoveTo {
-                        x: x.parse::<f64>().unwrap(),
-                        y: y.parse::<f64>().unwrap(),
-                    },
-                    PathOps::ClosePath => PathOps::ClosePath,
-                    PathOps::LineTo { x, y } => PathOps::LineTo {
-                        x: x.parse::<f64>().unwrap(),
-                        y: y.parse::<f64>().unwrap(),
-                    },
-                    PathOps::HorizontalLineTo { x } => PathOps::HorizontalLineTo {
-                        x: x.parse::<f64>().unwrap(),
-                    },
-                    PathOps::VerticalLineTo { y } => PathOps::VerticalLineTo {
-                        y: y.parse::<f64>().unwrap(),
-                    },
-                    PathOps::CurveTo {
-                        x1,
-                        y1,
-                        x2,
-                        y2,
-                        x,
-                        y,
-                    } => PathOps::CurveTo {
-                        x1: x1.parse::<f64>().unwrap(),
-                        y1: y1.parse::<f64>().unwrap(),
-                        x2: x2.parse::<f64>().unwrap(),
-                        y2: y2.parse::<f64>().unwrap(),
-                        x: x.parse::<f64>().unwrap(),
-                        y: y.parse::<f64>().unwrap(),
-                    },
-                    PathOps::ShorthandCurveTo { x2, y2, x, y } => PathOps::ShorthandCurveTo {
-                        x2: x2.parse::<f64>().unwrap(),
-                        y2: y2.parse::<f64>().unwrap(),
-                        x: x.parse::<f64>().unwrap(),
-                        y: y.parse::<f64>().unwrap(),
-                    },
-                    PathOps::QuadraticBézierCurveTo { x1, y1, x, y } => {
-                        PathOps::QuadraticBézierCurveTo {
-                            x1: x1.parse::<f64>().unwrap(),
-                            y1: y1.parse::<f64>().unwrap(),
-                            x: x.parse::<f64>().unwrap(),
-                            y: y.parse::<f64>().unwrap(),
-                        }
-                    }
-                    PathOps::ShorthandQuadraticBézierCurveTo { x, y } => {
-                        PathOps::ShorthandQuadraticBézierCurveTo {
-                            x: x.parse::<f64>().unwrap(),
-                            y: y.parse::<f64>().unwrap(),
-                        }
-                    }
-                    PathOps::EllipticalArc {
+    impl Display for SVGPathOps {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut to_write = String::new();
+            let ops;
+            let is_relative;
+            match self {
+                SVGPathOps::Relative(relative_ops) => (is_relative, ops) = (true, relative_ops),
+                SVGPathOps::Absolute(absolute_ops) => (is_relative, ops) = (false, absolute_ops),
+            }
+            let hr = |c: char| -> char {
+                // hr: handle_relative
+                if is_relative {
+                    c.to_lowercase()
+                        .to_string()
+                        .char_indices()
+                        .next()
+                        .unwrap()
+                        .1
+                } else {
+                    c
+                }
+            };
+            match ops {
+                PathOps::MoveTo { x, y } => {
+                    to_write.push_str(format!("{} {},{}", hr('M'), x, y).as_str())
+                }
+                PathOps::ClosePath => to_write.push_str(format!("{}", hr('Z')).as_str()),
+                PathOps::LineTo { x, y } => {
+                    to_write.push_str(format!("{} {},{}", hr('L'), x, y).as_str())
+                }
+                PathOps::HorizontalLineTo { x } => {
+                    to_write.push_str(format!("{} {}", hr('H'), x).as_str())
+                }
+                PathOps::VerticalLineTo { y } => {
+                    to_write.push_str(format!("{} {}", hr('V'), y).as_str())
+                }
+                PathOps::CurveTo {
+                    x1,
+                    y1,
+                    x2,
+                    y2,
+                    x,
+                    y,
+                } => to_write.push_str(
+                    format!("{} {},{} {},{} {},{}", hr('C'), x1, y1, x2, y2, x, y).as_str(),
+                ),
+                PathOps::ShorthandCurveTo { x2, y2, x, y } => {
+                    to_write.push_str(format!("{} {},{} {},{}", hr('S'), x2, y2, x, y).as_str())
+                }
+                PathOps::QuadraticBézierCurveTo { x1, y1, x, y } => {
+                    to_write.push_str(format!("{} {},{} {},{}", hr('Q'), x1, y1, x, y).as_str())
+                }
+                PathOps::ShorthandQuadraticBézierCurveTo { x, y } => {
+                    to_write.push_str(format!("{} {},{}", hr('T'), x, y).as_str())
+                }
+                PathOps::EllipticalArc {
+                    rx,
+                    ry,
+                    x_axis_rotation,
+                    large_arc_flag,
+                    sweep_flag,
+                    x,
+                    y,
+                } => to_write.push_str(
+                    format!(
+                        "{} {},{} {} {},{} {},{}",
+                        hr('A'),
                         rx,
                         ry,
                         x_axis_rotation,
                         large_arc_flag,
                         sweep_flag,
                         x,
-                        y,
-                    } => PathOps::EllipticalArc {
-                        rx: rx.parse::<f64>().unwrap(),
-                        ry: ry.parse::<f64>().unwrap(),
-                        x_axis_rotation: x_axis_rotation.parse::<f64>().unwrap(),
-                        large_arc_flag: large_arc_flag.parse::<f64>().unwrap(),
-                        sweep_flag: sweep_flag.parse::<f64>().unwrap(),
-                        x: x.parse::<f64>().unwrap(),
-                        y: y.parse::<f64>().unwrap(),
-                    },
-                },
-            )
+                        y
+                    )
+                    .as_str(),
+                ),
+            };
+            write!(f, "{}", to_write)
         }
     }
 
-    pub fn list_ops(input: &str) -> Vec<(bool, PathOps<f64>)> {
+    impl Into<SVGPathOps> for ResultOpsPathSvg {
+        fn into(self) -> SVGPathOps {
+            let ops = match self.carac {
+                PathOps::MoveTo { x, y } => PathOps::MoveTo {
+                    x: x.parse::<f64>().unwrap(),
+                    y: y.parse::<f64>().unwrap(),
+                },
+                PathOps::ClosePath => PathOps::ClosePath,
+                PathOps::LineTo { x, y } => PathOps::LineTo {
+                    x: x.parse::<f64>().unwrap(),
+                    y: y.parse::<f64>().unwrap(),
+                },
+                PathOps::HorizontalLineTo { x } => PathOps::HorizontalLineTo {
+                    x: x.parse::<f64>().unwrap(),
+                },
+                PathOps::VerticalLineTo { y } => PathOps::VerticalLineTo {
+                    y: y.parse::<f64>().unwrap(),
+                },
+                PathOps::CurveTo {
+                    x1,
+                    y1,
+                    x2,
+                    y2,
+                    x,
+                    y,
+                } => PathOps::CurveTo {
+                    x1: x1.parse::<f64>().unwrap(),
+                    y1: y1.parse::<f64>().unwrap(),
+                    x2: x2.parse::<f64>().unwrap(),
+                    y2: y2.parse::<f64>().unwrap(),
+                    x: x.parse::<f64>().unwrap(),
+                    y: y.parse::<f64>().unwrap(),
+                },
+                PathOps::ShorthandCurveTo { x2, y2, x, y } => PathOps::ShorthandCurveTo {
+                    x2: x2.parse::<f64>().unwrap(),
+                    y2: y2.parse::<f64>().unwrap(),
+                    x: x.parse::<f64>().unwrap(),
+                    y: y.parse::<f64>().unwrap(),
+                },
+                PathOps::QuadraticBézierCurveTo { x1, y1, x, y } => {
+                    PathOps::QuadraticBézierCurveTo {
+                        x1: x1.parse::<f64>().unwrap(),
+                        y1: y1.parse::<f64>().unwrap(),
+                        x: x.parse::<f64>().unwrap(),
+                        y: y.parse::<f64>().unwrap(),
+                    }
+                }
+                PathOps::ShorthandQuadraticBézierCurveTo { x, y } => {
+                    PathOps::ShorthandQuadraticBézierCurveTo {
+                        x: x.parse::<f64>().unwrap(),
+                        y: y.parse::<f64>().unwrap(),
+                    }
+                }
+                PathOps::EllipticalArc {
+                    rx,
+                    ry,
+                    x_axis_rotation,
+                    large_arc_flag,
+                    sweep_flag,
+                    x,
+                    y,
+                } => PathOps::EllipticalArc {
+                    rx: rx.parse::<f64>().unwrap(),
+                    ry: ry.parse::<f64>().unwrap(),
+                    x_axis_rotation: x_axis_rotation.parse::<f64>().unwrap(),
+                    large_arc_flag: large_arc_flag.parse::<f64>().unwrap(),
+                    sweep_flag: sweep_flag.parse::<f64>().unwrap(),
+                    x: x.parse::<f64>().unwrap(),
+                    y: y.parse::<f64>().unwrap(),
+                },
+            };
+            match self.relative {
+                true => SVGPathOps::Relative(ops),
+                false => SVGPathOps::Absolute(ops),
+            }
+        }
+    }
+
+    pub fn list_ops(input: &str) -> Vec<SVGPathOps> {
         let var = list_ops_path_svg(input);
         let mut temp = vec![];
         for e in var {
@@ -481,7 +567,7 @@ mod svg_path {
         temp
     }
 
-    pub fn list_ops_path_svg(input: &str) -> Vec<FullOpsPathSvg> {
+    pub fn list_ops_path_svg(input: &str) -> Vec<ResultOpsPathSvg> {
         let mut temp_buf = vec![];
         for e in LIST_REGEX_PATH_SVG {
             let regex = Regex::new(e.1).unwrap();
@@ -497,7 +583,7 @@ mod svg_path {
                     // println!("{:?}{:?}", matcher, matcher.as_str());
                     matcher.as_str().to_string()
                 }
-                temp_buf.push(FullOpsPathSvg {
+                temp_buf.push(ResultOpsPathSvg {
                     relative: f
                         .name("marker")
                         .unwrap()
@@ -568,6 +654,8 @@ mod svg_path {
         temp_buf
     }
 
+    #[allow(unused)]
+    #[deprecated]
     pub fn carac(path: &str) -> Vec<PathOps<String>> {
         let set = RegexSet::new(&[
             MOVE_TO,
@@ -687,7 +775,7 @@ fn main() {
     let shape3 = "m 40. 254.5  z";
     let wrong_shape = "m l 250 a -400, -350 .";
     let correct_complex_path = "M10,10 l 5,7 C-5,7.2,.3-16,24,10  z";
-    let tests = vec![
+    let _tests = vec![
         "",
         "M-11.11,-22 L.33-44  ac55    66 h77  M88 .99  Z",
         "M500,500 L500,200 L800,500 z M400,600 L400,900 L100,600 z",
@@ -819,6 +907,9 @@ fn main() {
         println!("");
         println!("{a:?}");
         println!("{:?}", list_ops(a));
+        for e in list_ops(a) {
+            println!("{}", e);
+        }
     }
     // IS_VALID_DESCRIPTOR.test( shape2 );
     //    -> true
