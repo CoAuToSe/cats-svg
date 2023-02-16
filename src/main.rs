@@ -263,7 +263,6 @@ mod svg_path {
         r" *(?P<marker>[Hh])[,\s]*(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))+ *";
     pub const VERTICAL_LINE_TO: &str =
         r" *(?P<marker>[Vv])[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))+ *";
-    // let correct_complex_path = "M10,10 l 5,7 C-5,7.2,.3-16,24,10  z";
     pub const CURVE_TO: &str = r" *(?P<marker>[Cc])[,\s]*(?:(?P<x1>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y1>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<x2>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y2>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.)))+ *";
     pub const SHORTHAND_CURVE_TO: &str = r" *(?P<marker>[Ss])[,\s]*(?:(?P<x2>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y2>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.)))+ *";
     pub const QUADRATIC_BÉZIER_CURVE_TO: &str = r" *(?P<marker>[Qq])[,\s]*(?:(?P<x1>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y1>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<x>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.))[,\s]*(?P<y>-?(?:[0-9]*\.?\d+\.?)|(?:[0-9]*\.)))+ *";
@@ -565,6 +564,14 @@ mod svg_path {
             temp.push(e.into())
         }
         temp
+    }
+
+    pub fn prettier_ops(input: &str) -> String {
+        list_ops(input)
+            .iter()
+            .map(|some| format!("{some}"))
+            .collect::<Vec<String>>()
+            .join(" ")
     }
 
     pub fn list_ops_path_svg(input: &str) -> Vec<ResultOpsPathSvg> {
@@ -910,6 +917,8 @@ fn main() {
         for e in list_ops(a) {
             println!("{}", e);
         }
+
+        println!("{:?}", prettier_ops(a));
     }
     // IS_VALID_DESCRIPTOR.test( shape2 );
     //    -> true
