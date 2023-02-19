@@ -1,3 +1,5 @@
+use std::borrow::BorrowMut;
+
 use regex::*;
 
 mod dict {
@@ -828,6 +830,21 @@ impl Balise {
             Balise::Solo { name, .. } => name.to_string(),
         }
     }
+    pub fn to_group(&self) -> Balise {
+        match self {
+            Balise::Groupe { .. } => self.clone(),
+            Balise::Solo {
+                name,
+                params,
+                after,
+            } => Balise::Groupe {
+                name: name.to_string(),
+                params: params.to_vec(),
+                inners: vec![],
+                after: after.to_string(),
+            },
+        }
+    }
 }
 
 fn main() {
@@ -954,7 +971,7 @@ fn main() {
             // if we found a group ender that means that we are going deeper
             aze.push((depth, current_balise.name()));
             name_pool.push((depth, current_balise.name()));
-            _index_pool.push(current_balise);
+            _index_pool.push(current_balise.to_group());
             depth += 1;
         } else {
             // if we found the opening of the group
@@ -1011,9 +1028,56 @@ fn main() {
     to_vec.push(temp_vec.clone());
     to_print.push((lastes_depth, temp_string));
 
-    for e in to_print.iter().zip(to_vec).rev() {
-        println!("{:?}", e);
+    let mut fuck_you: Vec<Vec<Balise>> = vec![];
+    let mut las_depth = -1;
+    for e in to_vec.iter_mut().zip(&to_print).rev() {
+        let real: Vec<&Balise> = e.0.iter().rev().collect();
+
+        // println!("(({:?}, {:?}), {:?})", e.1 .0, e.1 .1, real);
+        let current_depth = e.1 .0;
+        // println!("fuck you {:?}: {:?}\n\n", fuck_you.len(), fuck_you);
+        if current_depth > las_depth {
+            //going deeper so adding an element to the vec
+            e.0.reverse();
+            fuck_you.push(e.0.to_vec())
+        }
+        if current_depth < las_depth {
+            //getting out of the depth -> meaning that we are grouping things -> removing for the vec
+            // println!("\nfuckazeazrertze you: {:?}\n\n", e.0.last_mut());
+            match e.0.last_mut() {
+                Some(lol) => match lol {
+                    Balise::Groupe {
+                        name,
+                        params,
+                        inners,
+                        after: _,
+                    } => *inners = fuck_you.pop().unwrap(),
+                    Balise::Solo {
+                        name,
+                        params,
+                        after,
+                    } => (),
+                },
+                None => todo!(),
+            }
+            let frgze = fuck_you.len() - 1;
+            e.0.reverse();
+            fuck_you[frgze].append(&mut e.0.to_vec())
+        }
+        if las_depth == current_depth {
+            //we are cool so we add to the depth in the vec (the last element)
+            let frgze = fuck_you.len() - 1;
+            e.0.reverse();
+            fuck_you[frgze].append(&mut e.0.to_vec())
+        }
+        las_depth = current_depth;
     }
+    println!("{fuck_you:#?}");
+    // for e in to_vec.iter_mut().zip(to_print).rev() {
+    //     let real: Vec<&Balise> = e.0.iter().rev().collect();
+
+    //     println!("(({:?}, {:?}), {:?})\n", e.1 .0, e.1 .1, real);
+    // }
     // for e in to_vec.iter().rev() {
     //     println!("{:?}", e);
     // }
