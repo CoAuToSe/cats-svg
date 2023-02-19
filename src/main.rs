@@ -812,17 +812,19 @@ fn main() {
     \s*
     (?P<balise>
         <
-        \s*
-        (?P<end_start>/)?
-        \s*
-        (?P<name>[^\ >]+)
-        \s*
-        (?P<params>[^/>]+)?
-        \s*
-        (?P<end_end>/)?
-        \s*
-        >
-        (?P<after>[^<]+)?
+        (?:
+            \s*
+            (?P<end_start>/)?
+            \s*
+            (?P<name>[^\s>]+)
+            \s*
+            (?P<params>[^>]+)?
+            \s*
+            (?P<end_end>/)?
+            \s*
+            >
+            (?P<after>[^<]+)?
+        )
     )
     ";
     let balarer = r"(?x)(?s)
@@ -874,6 +876,8 @@ fn main() {
             )
             
         )";
+
+    let mut vectaze = vec![];
     for cap in Regex::new(
         balerin,
         // r"(?P<balise><(?P<balise_name>[^ >]+)(?:(?: (?P<params>[^>]+))?>(?P<inner>[^<]+)?</.*>)|(?: (?P<aparams>[^>]+))?>)",
@@ -883,8 +887,73 @@ fn main() {
     .unwrap()
     .captures_iter(EXAMPLE)
     {
-        println!("{:?}\n{:?}\n", cap.name("name").unwrap().as_str(), cap);
+        if let Some(name) = cap.name("name") {
+            println!("{:?}\n{:?}\n", name.as_str(), cap);
+            vectaze.push(cap);
+        }
     }
+    let mut aze = vec![];
+    let mut index = 0;
+    let mut name_pool = vec![];
+    let mut _index_pool = vec![];
+    let mut depth = 0_isize;
+    for e in vectaze.iter().rev() {
+        index += 1;
+        let balise_name = e.name("name").unwrap().as_str();
+        let ender = e.name("end_start").is_some();
+        if ender {
+            // if we found a group ender that means that we are going deeper
+            aze.push((depth, balise_name));
+            name_pool.push((depth, balise_name));
+            _index_pool.push(index);
+            depth += 1;
+        } else {
+            // if we found the opening of the group
+            if name_pool.contains(&(depth - 1, balise_name)) {
+                // then we are closing the group
+                let pos_to_pop = name_pool.binary_search(&(depth - 1, balise_name)).unwrap();
+                name_pool.remove(pos_to_pop);
+                _index_pool.remove(pos_to_pop);
+                depth -= 1;
+            }
+            aze.push((depth, balise_name));
+        }
+        // println!("{:?}\n{:#?}\n", name_pool, aze.iter().rev());
+        // std::thread::sleep(std::time::Duration::from_millis(1000 as u64));
+    }
+
+    for e in aze.iter().rev() {
+        println!(
+            "{}{}{:?}",
+            String::from(" ").repeat(e.0.abs() as usize),
+            e.0,
+            e.1
+        );
+    }
+    for e in name_pool.iter().zip(_index_pool) {
+        println!("{:?}{:?}", e.0, e.1);
+    }
+
+    let mut to_print = vec![];
+    let mut lastes_depth = 0;
+    let mut temp_string = String::new();
+    for e in aze.iter() {
+        if lastes_depth == e.0 {
+            temp_string.push_str(e.1);
+            temp_string.push_str(" ");
+        } else {
+            to_print.push((lastes_depth, temp_string));
+            lastes_depth = e.0;
+            temp_string = String::new();
+            temp_string.push_str(e.1);
+            temp_string.push_str(" ");
+        }
+    }
+    to_print.push((lastes_depth, temp_string));
+
+    // for e in to_print.iter().rev() {
+    //     println!("{:?}", e);
+    // }
 
     // for cap in Regex::new(FIND_SVG).unwrap().captures_iter(TEXT1) {
     //     println!("{:#?}", cap);
