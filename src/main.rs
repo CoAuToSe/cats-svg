@@ -806,6 +806,39 @@ const EXAMPLE_OLD: &str = r#"
 "#;
 const EXAMPLE: &str = include_str!("test.html");
 
+#[derive(Debug, PartialEq, PartialOrd, Eq, Ord, Clone)]
+enum Balise {
+    Groupe {
+        name: String,
+        params: Vec<String>,
+        inners: Vec<Balise>,
+        after: String,
+    },
+    Solo {
+        name: String,
+        params: Vec<String>,
+        after: String,
+    },
+}
+
+impl Balise {
+    pub fn name(&self) -> String {
+        match self {
+            Balise::Groupe {
+                name,
+                params,
+                inners,
+                after,
+            } => name.to_string(),
+            Balise::Solo {
+                name,
+                params,
+                after,
+            } => name.to_string(),
+        }
+    }
+}
+
 fn main() {
     println!("Hello, world!");
     let balerin = r"(?x)
@@ -892,6 +925,14 @@ fn main() {
             vectaze.push(cap);
         }
     }
+
+    let mut my_html = Balise::Groupe {
+        name: String::from("heml"),
+        params: vec![],
+        inners: vec![],
+        after: String::from(""),
+    };
+
     let mut aze = vec![];
     let mut index = 0;
     let mut name_pool = vec![];
@@ -899,24 +940,38 @@ fn main() {
     let mut depth = 0_isize;
     for e in vectaze.iter().rev() {
         index += 1;
-        let balise_name = e.name("name").unwrap().as_str();
+
+        let current_balise = Balise::Solo {
+            name: e.name("name").unwrap().as_str().to_string(),
+            params: match e.name("params") {
+                Some(params) => vec![params.as_str().to_string()],
+                None => vec![],
+            },
+            after: match e.name("after") {
+                Some(after) => String::from(after.as_str()),
+                None => String::from(""),
+            },
+        };
+
         let ender = e.name("end_start").is_some();
         if ender {
             // if we found a group ender that means that we are going deeper
-            aze.push((depth, balise_name));
-            name_pool.push((depth, balise_name));
-            _index_pool.push(index);
+            aze.push((depth, current_balise.name()));
+            name_pool.push((depth, current_balise.name()));
+            _index_pool.push(current_balise);
             depth += 1;
         } else {
             // if we found the opening of the group
-            if name_pool.contains(&(depth - 1, balise_name)) {
+            if name_pool.contains(&(depth - 1, current_balise.name())) {
                 // then we are closing the group
-                let pos_to_pop = name_pool.binary_search(&(depth - 1, balise_name)).unwrap();
+                let pos_to_pop = name_pool
+                    .binary_search(&(depth - 1, current_balise.name()))
+                    .unwrap();
                 name_pool.remove(pos_to_pop);
-                _index_pool.remove(pos_to_pop);
                 depth -= 1;
             }
-            aze.push((depth, balise_name));
+            aze.push((depth, current_balise.name()));
+            _index_pool.push(current_balise);
         }
         // println!("{:?}\n{:#?}\n", name_pool, aze.iter().rev());
         // std::thread::sleep(std::time::Duration::from_millis(1000 as u64));
@@ -930,28 +985,40 @@ fn main() {
             e.1
         );
     }
-    for e in name_pool.iter().zip(_index_pool) {
-        println!("{:?}{:?}", e.0, e.1);
-    }
+    // for e in name_pool.iter().zip(_index_pool) {
+    //     println!("{:?}{:?}", e.0, e.1);
+    // }
 
     let mut to_print = vec![];
     let mut lastes_depth = 0;
     let mut temp_string = String::new();
-    for e in aze.iter() {
-        if lastes_depth == e.0 {
-            temp_string.push_str(e.1);
+    let mut temp_vec = vec![];
+    let mut to_vec = vec![];
+    for e in aze.iter().zip(_index_pool) {
+        if lastes_depth == e.0 .0 {
+            temp_vec.push(e.1);
+            temp_string.push_str(&e.0 .1);
             temp_string.push_str(" ");
         } else {
+            to_vec.push(temp_vec.clone());
             to_print.push((lastes_depth, temp_string));
-            lastes_depth = e.0;
+
+            lastes_depth = e.0 .0;
+            temp_vec.clear();
             temp_string = String::new();
-            temp_string.push_str(e.1);
+
+            temp_vec.push(e.1);
+            temp_string.push_str(&e.0 .1);
             temp_string.push_str(" ");
         }
     }
+    to_vec.push(temp_vec.clone());
     to_print.push((lastes_depth, temp_string));
 
-    // for e in to_print.iter().rev() {
+    for e in to_print.iter().zip(to_vec).rev() {
+        println!("{:?}", e);
+    }
+    // for e in to_vec.iter().rev() {
     //     println!("{:?}", e);
     // }
 
