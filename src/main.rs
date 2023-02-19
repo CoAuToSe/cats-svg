@@ -824,17 +824,8 @@ enum Balise {
 impl Balise {
     pub fn name(&self) -> String {
         match self {
-            Balise::Groupe {
-                name,
-                params,
-                inners,
-                after,
-            } => name.to_string(),
-            Balise::Solo {
-                name,
-                params,
-                after,
-            } => name.to_string(),
+            Balise::Groupe { name, .. } => name.to_string(),
+            Balise::Solo { name, .. } => name.to_string(),
         }
     }
 }
@@ -845,6 +836,11 @@ fn main() {
     \s*
     (?P<balise>
         <
+        (?:
+            !--
+            .*?
+            -->
+        )?|
         (?:
             \s*
             (?P<end_start>/)?
