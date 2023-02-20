@@ -1,4 +1,4 @@
-use std::borrow::BorrowMut;
+use std::{borrow::BorrowMut, fmt::Display};
 
 use regex::*;
 
@@ -823,6 +823,43 @@ enum Balise {
     },
 }
 
+impl Display for Balise {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Balise::Groupe {
+                name,
+                params,
+                inners,
+                after,
+            } => {
+                let atze = {
+                    let mut to_print = String::from("");
+                    for inner in inners.iter() {
+                        to_print.push_str(&format!("{}", inner))
+                    }
+                    to_print
+                };
+                let mut marker = String::from("");
+                if !name.contains("--") && params.len() != 0 {
+                    marker = String::from(" ")
+                }
+                write!(f, "{atze}</{name}{marker}{}>{after}", params.join(" "))
+            }
+            Balise::Solo {
+                name,
+                params,
+                after,
+            } => {
+                let mut marker = String::from("");
+                if !name.contains("--") {
+                    marker = String::from(" ")
+                }
+                write!(f, "<{name}{marker}{}>{after}", params.join(" "))
+            }
+        }
+    }
+}
+
 impl Balise {
     pub fn name(&self) -> String {
         match self {
@@ -853,11 +890,6 @@ fn main() {
     \s*
     (?P<balise>
         <
-        (?:
-            !--
-            .*?
-            -->
-        )?|
         (?:
             \s*
             (?P<end_start>/)?
@@ -1064,6 +1096,11 @@ fn main() {
         las_depth = current_depth;
     }
     println!("{fuck_you:#?}");
+
+    let final_html = &fuck_you[0];
+    for e in final_html {
+        println!("{e}");
+    }
     // for e in to_vec.iter_mut().zip(to_print).rev() {
     //     let real: Vec<&Balise> = e.0.iter().rev().collect();
 
