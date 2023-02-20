@@ -1046,19 +1046,10 @@ fn main() {
             // println!("\nfuckazeazrertze you: {:?}\n\n", e.0.last_mut());
             match e.0.last_mut() {
                 Some(lol) => match lol {
-                    Balise::Groupe {
-                        name,
-                        params,
-                        inners,
-                        after: _,
-                    } => *inners = fuck_you.pop().unwrap(),
-                    Balise::Solo {
-                        name,
-                        params,
-                        after,
-                    } => (),
+                    Balise::Groupe { inners, .. } => *inners = fuck_you.pop().unwrap(),
+                    Balise::Solo { .. } => (),
                 },
-                None => todo!(),
+                None => unreachable!(),
             }
             let frgze = fuck_you.len() - 1;
             e.0.reverse();
