@@ -806,7 +806,7 @@ const EXAMPLE_OLD: &str = r#"
 </head>
 <body len="lol" lezan="lol"></body>
 "#;
-const EXAMPLE: &str = include_str!("test.html");
+const EXAMPLE: &str = include_str!("test2.html");
 
 #[derive(Debug, PartialEq, PartialOrd, Eq, Ord, Clone)]
 enum Balise {
@@ -851,7 +851,7 @@ impl Display for Balise {
                 after,
             } => {
                 let mut marker = String::from("");
-                if !name.contains("--") {
+                if !name.ends_with("--") || (*name == String::from("!--")) {
                     marker = String::from(" ")
                 }
                 write!(f, "<{name}{marker}{}>{after}", params.join(" "))
@@ -1022,14 +1022,14 @@ fn main() {
         // std::thread::sleep(std::time::Duration::from_millis(1000 as u64));
     }
 
-    for e in aze.iter().rev() {
-        println!(
-            "{}{}{:?}",
-            String::from(" ").repeat(e.0.abs() as usize),
-            e.0,
-            e.1
-        );
-    }
+    // for e in aze.iter().rev() {
+    //     println!(
+    //         "{}{}{:?}",
+    //         String::from(" ").repeat(e.0.abs() as usize),
+    //         e.0,
+    //         e.1
+    //     );
+    // }
     // for e in name_pool.iter().zip(_index_pool) {
     //     println!("{:?}{:?}", e.0, e.1);
     // }
@@ -1095,12 +1095,28 @@ fn main() {
         }
         las_depth = current_depth;
     }
-    println!("{fuck_you:#?}");
+    // println!("{fuck_you:#?}");
 
     let final_html = &fuck_you[0];
+    let mut to_file = String::from("");
     for e in final_html {
-        println!("{e}");
+        // println!("{e}");
+        to_file += &format!("{e}");
     }
+
+    {
+        let path = std::path::Path::new("src/result2.html");
+        let display = path.display();
+        let mut file = match std::fs::File::create(&path) {
+            Err(why) => panic!("couldn't create {}: {}", display, why),
+            Ok(file) => file,
+        };
+        match std::io::Write::write_all(&mut file, to_file.as_bytes()) {
+            Err(why) => panic!("couldn't write to {}: {}", display, why),
+            Ok(_) => println!("successfully wrote to {}", display),
+        }
+    }
+
     // for e in to_vec.iter_mut().zip(to_print).rev() {
     //     let real: Vec<&Balise> = e.0.iter().rev().collect();
 
