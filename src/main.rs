@@ -1,4 +1,4 @@
-use std::{borrow::BorrowMut, fmt::Display};
+use std::{borrow::BorrowMut, default, fmt::Display};
 
 use regex::*;
 
@@ -812,9 +812,11 @@ const EXAMPLE: &str = include_str!("test2.html");
 enum Balise {
     Groupe {
         name: String,
-        params: Vec<String>,
+        params_in: Vec<String>,
+        params_out: Vec<String>,
         inners: Vec<Balise>,
-        after: String,
+        after_in: String,
+        after_out: String,
     },
     Solo {
         name: String,
@@ -823,14 +825,26 @@ enum Balise {
     },
 }
 
+impl Default for Balise {
+    fn default() -> Self {
+        Balise::Solo {
+            name: String::new(),
+            params: vec![],
+            after: String::new(),
+        }
+    }
+}
+
 impl Display for Balise {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Balise::Groupe {
                 name,
-                params,
+                params_in,
+                params_out,
                 inners,
-                after,
+                after_in,
+                after_out,
             } => {
                 let atze = {
                     let mut to_print = String::from("");
@@ -876,9 +890,11 @@ impl Balise {
                 after,
             } => Balise::Groupe {
                 name: name.to_string(),
-                params: params.to_vec(),
+                params_in: params.to_vec(),
+                params_out: vec![],
                 inners: vec![],
-                after: after.to_string(),
+                after_in: after.to_string(),
+                after_out: String::new(),
             },
         }
     }
@@ -955,6 +971,7 @@ fn main() {
             
         )";
 
+    // collect alla balise with a name into vectaze
     let mut vectaze = vec![];
     for cap in Regex::new(
         balerin,
@@ -971,6 +988,7 @@ fn main() {
         }
     }
 
+    //create the balise my_html to be the helder for the whole struct
     let mut my_html = Balise::Groupe {
         name: String::from("heml"),
         params: vec![],
@@ -978,6 +996,9 @@ fn main() {
         after: String::from(""),
     };
 
+    // we accumultate the groups in a vec and fuse the last list of balise into the last element of the element before to (wrapping them)
+
+    // we collect all possible balises and put them in a vec, assuring groups are Balise::Groupe
     let mut aze = vec![];
     let mut index = 0;
     let mut name_pool = vec![];
@@ -1022,6 +1043,7 @@ fn main() {
         // std::thread::sleep(std::time::Duration::from_millis(1000 as u64));
     }
 
+    // print balise depth with tabs and number and the name of the tab
     // for e in aze.iter().rev() {
     //     println!(
     //         "{}{}{:?}",
@@ -1034,6 +1056,7 @@ fn main() {
     //     println!("{:?}{:?}", e.0, e.1);
     // }
 
+    // fuse same depth balises to a vec of balises, to allow easy management of them
     let mut to_print = vec![];
     let mut lastes_depth = 0;
     let mut temp_string = String::new();
@@ -1059,7 +1082,8 @@ fn main() {
     }
     to_vec.push(temp_vec.clone());
     to_print.push((lastes_depth, temp_string));
-
+    println!("{to_print:?}\n\n{to_vec:?}");
+    // use the fused vec to fold the groups
     let mut fuck_you: Vec<Vec<Balise>> = vec![];
     let mut las_depth = -1;
     for e in to_vec.iter_mut().zip(&to_print).rev() {
@@ -1095,14 +1119,29 @@ fn main() {
         }
         las_depth = current_depth;
     }
-    // println!("{fuck_you:#?}");
-
+    // // println!("{fuck_you:#?}");
     let final_html = &fuck_you[0];
+
     let mut to_file = String::from("");
-    for e in final_html {
-        // println!("{e}");
-        to_file += &format!("{e}");
-    }
+    // // here the group balises have an issue as there is the starter balise and the group balise
+    // let mut last_element: Balise = Default::default();
+    // for e in final_html {
+    //    //  match e {
+    //         Balise::Groupe {
+    //             name,
+    //             params,
+    //             inners,
+    //             after,
+    //         } => if last_element.name() == name {},
+    //         Balise::Solo { .. } => (),
+    //     }
+    //     last_element = *e;
+    // }
+
+    // for e in final_html {
+    //     println!("{e}");
+    to_file += &format!("{e}");
+    // }
 
     {
         let path = std::path::Path::new("src/result2.html");

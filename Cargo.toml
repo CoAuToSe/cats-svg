@@ -9,3 +9,9 @@ edition = "2021"
 svg="*"
 regex="*"
 phf = { version = "0.11", default-features = false, features = ["macros"] }
+csv = "*"
+
+
+[[bin]]
+name = "transform"
+path = "src/transform.rs"
