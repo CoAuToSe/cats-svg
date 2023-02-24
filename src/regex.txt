@@ -1,0 +1,56 @@
+
+Regular expression to match all TD tags:
+<(.)>.?|<(.*) />
+<(\S*?)[^>]>.?</\1>|<.*?/>
+
+
+Regular expression to match all TD tags:
+<td\s*.*>\s*.*<\/td>
+
+
+Regular expression to match <img src="test.gif"/>:
+<[a-zA-Z]+(\s+[a-zA-Z]+\s*=\s*("([^"])"|'([^'])'))\s/>
+
+
+mail?:
+([a-zA-Z0-9_.-]@[a-zA-Z0-9_.-])
+
+
+Below is a simple regex to validate the string against HTML tag pattern. This can be later used to remove all tags and leave text only.
+<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>
+
+// Remove all tags from a string
+var htmlRegexG = /<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g;
+'<html><body>Hello, <b>world</b>!<br /></body></html>'.replace(htmlRegexG, ''); // returns 'Hello, world';
+
+// Extract text between specific HTML tag
+var htmlRegexG = /(?<=<div.*?class="some-class".*?>)(.*?)(?=<\/div>)/g;
+'<html><body>Probably.<div class="some-class">Hello, world!</div><br />Today</body></html>'.match(htmlRegexG); // returns ['Hello, world'];
+
+
+Extract text between certain tags
+var r1 = /<div>(.*?)<\/div>/g // Tag only
+var r2 = /(?<=<div.*?class="some-class".*?>)(.*?)(?=<\/div>)/g // Tag+class
+
+
+RANDOM {
+    
+(?:<style.+?>.+?</style>|<script.+?>.+?</script>|<(?:!|/?[a-zA-Z]+).*?/?>)
+
+This regex <\/?\w[^>]*>|&\w+; requires a proper tag. Example: "3 <5 and 10 > 9" will not be removed and also remove html codes like &nbsp;
+
+<\/?[\w\s]*>|<.+[\W]>
+
+with reference?
+(?:<(a|img)(?:\s[^>]*)?>)((?:(?!<\1)[\s\S])*)
+(?:<(a|img)(?:\s[^>]*)?>)\s*((?:(?!<\1)[\s\S])*)\s*(?:<\/\1>)
+
+<([\w\-/]+)( +[\w\-]+(=(('[^']*')|("[^"]*")))?)* *>
+
+^<([a-z]+)([^>]+)*(?:>(.*)<\/\1>|\s+\/>)$
+
+Your regex starts fail on the very shortest possible, valid HTML: <!doctype html><title><</title>.
+Simple '<!doctype html><title><</title>'.match(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g)
+returns ["<!doctype html>", "<title>", "<</title>"] while should ["<title>", "</title>"]
+
+}
