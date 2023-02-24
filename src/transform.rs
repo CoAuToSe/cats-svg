@@ -10,9 +10,10 @@ fn read_lines(filename: String) -> io::Lines<BufReader<File>> {
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    dbg!(args);
+    // dbg!(args);
+    let name_file = format!("{}", args[1]);
     // Create a CSV parser that reads data from stdin.
-    let mut rdr = csv::Reader::from_path("./src/aze_r.csv").unwrap();
+    let mut rdr = csv::Reader::from_path(format!("./src/{}.csv", name_file)).unwrap();
     // Loop over each record.
 
     let mut list_name_args = vec![];
@@ -29,5 +30,56 @@ fn main() {
         //     println!("{:?}", e)
         // }
     }
-    println!("{list_name_args:?}")
+    // println!("{list_name_args:?}");
+    let mut list_balises = vec![];
+    for e in list_name_args {
+        if e.0.starts_with("<") {
+            let mut my = String::from(e.0.clone().trim());
+            my.remove(0);
+            my.pop();
+            my = my
+                .split("-")
+                .map(|a| uppercase_first(a))
+                .collect::<Vec<String>>()
+                .join("");
+            list_balises.push(my);
+        }
+    }
+    println!("{:?}", list_balises);
+    {
+        let string_path = format!("./src/{}.rs", name_file);
+        let path = std::path::Path::new(&string_path);
+        let display = path.display();
+        let mut file = match std::fs::File::create(&path) {
+            Err(why) => panic!("couldn't create {}: {}", display, why),
+            Ok(file) => file,
+        };
+        match std::io::Write::write_all(
+            &mut file,
+            format!(
+                "enum Balise{} {{\n\t{},\n\tOther\n}}",
+                name_file.to_uppercase(),
+                list_balises.join(",\n\t")
+            )
+            .as_bytes(),
+        ) {
+            Err(why) => panic!("couldn't write to {}: {}", display, why),
+            Ok(_) => println!("successfully wrote to {}", display),
+        }
+    }
+}
+
+fn uppercase_first(data: &str) -> String {
+    // Uppercase first letter.
+    let mut result = String::new();
+    let mut first = true;
+    for value in data.chars() {
+        if first {
+            result.push(value.to_ascii_uppercase());
+            first = false;
+        } else {
+            result.push(value);
+        }
+    }
+    result
 }
