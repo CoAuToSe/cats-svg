@@ -1,4 +1,8 @@
-use std::{borrow::BorrowMut, default, fmt::Display};
+use std::{
+    borrow::BorrowMut,
+    default::{self},
+    fmt::Display,
+};
 
 use regex::*;
 
@@ -806,15 +810,15 @@ const EXAMPLE_OLD: &str = r#"
 </head>
 <body len="lol" lezan="lol"></body>
 "#;
-const EXAMPLE: &str = include_str!("test2.html");
+const EXAMPLE: &str = include_str!("test.html");
 
 #[derive(Debug, PartialEq, PartialOrd, Eq, Ord, Clone)]
 enum Balise {
     Groupe {
         name: String,
+        inners: Vec<Balise>,
         params_in: Vec<String>,
         params_out: Vec<String>,
-        inners: Vec<Balise>,
         after_in: String,
         after_out: String,
     },
@@ -840,24 +844,34 @@ impl Display for Balise {
         match self {
             Balise::Groupe {
                 name,
+                inners,
                 params_in,
                 params_out,
-                inners,
                 after_in,
                 after_out,
             } => {
-                let atze = {
+                let to_print_inner = {
                     let mut to_print = String::from("");
                     for inner in inners.iter() {
                         to_print.push_str(&format!("{}", inner))
                     }
                     to_print
                 };
-                let mut marker = String::from("");
-                if !name.contains("--") && params.len() != 0 {
-                    marker = String::from(" ")
+
+                let mut marker_in = String::from("");
+                if !name.ends_with("--") || (*name == String::from("!--")) {
+                    marker_in = String::from(" ")
                 }
-                write!(f, "{atze}</{name}{marker}{}>{after}", params.join(" "))
+                let mut marker_out = String::from("");
+                if !name.contains("--") && params_out.len() != 0 {
+                    marker_out = String::from(" ")
+                }
+                write!(
+                    f,
+                    "<{name}{marker_in}{}>{to_print_inner}</{name}{marker_out}{}>{after_out}",
+                    params_in.join(" "),
+                    params_out.join(" ")
+                )
             }
             Balise::Solo {
                 name,
@@ -890,16 +904,16 @@ impl Balise {
                 after,
             } => Balise::Groupe {
                 name: name.to_string(),
+                inners: vec![],
                 params_in: params.to_vec(),
                 params_out: vec![],
-                inners: vec![],
                 after_in: after.to_string(),
                 after_out: String::new(),
             },
         }
     }
 }
-
+mod svg;
 fn main() {
     println!("Hello, world!");
     let balerin = r"(?x)
@@ -988,13 +1002,17 @@ fn main() {
         }
     }
 
+    let default_balise: Balise = Default::default();
     //create the balise my_html to be the helder for the whole struct
     let mut my_html = Balise::Groupe {
         name: String::from("heml"),
-        params: vec![],
-        inners: vec![],
-        after: String::from(""),
-    };
+        inners: Default::default(),
+        params_in: Default::default(),
+        params_out: Default::default(),
+        after_in: Default::default(),
+        after_out: Default::default(),
+    }
+    .to_group();
 
     // we accumultate the groups in a vec and fuse the last list of balise into the last element of the element before to (wrapping them)
 
@@ -1002,7 +1020,7 @@ fn main() {
     let mut aze = vec![];
     let mut index = 0;
     let mut name_pool = vec![];
-    let mut _index_pool = vec![];
+    let mut balise_pool = vec![];
     let mut depth = 0_isize;
     for e in vectaze.iter().rev() {
         index += 1;
@@ -1024,7 +1042,7 @@ fn main() {
             // if we found a group ender that means that we are going deeper
             aze.push((depth, current_balise.name()));
             name_pool.push((depth, current_balise.name()));
-            _index_pool.push(current_balise.to_group());
+            balise_pool.push(current_balise.to_group());
             depth += 1;
         } else {
             // if we found the opening of the group
@@ -1037,7 +1055,7 @@ fn main() {
                 depth -= 1;
             }
             aze.push((depth, current_balise.name()));
-            _index_pool.push(current_balise);
+            balise_pool.push(current_balise);
         }
         // println!("{:?}\n{:#?}\n", name_pool, aze.iter().rev());
         // std::thread::sleep(std::time::Duration::from_millis(1000 as u64));
@@ -1052,7 +1070,7 @@ fn main() {
     //         e.1
     //     );
     // }
-    // for e in name_pool.iter().zip(_index_pool) {
+    // for e in name_pool.iter().zip(balise_pool) {
     //     println!("{:?}{:?}", e.0, e.1);
     // }
 
@@ -1062,7 +1080,7 @@ fn main() {
     let mut temp_string = String::new();
     let mut temp_vec = vec![];
     let mut to_vec = vec![];
-    for e in aze.iter().zip(_index_pool) {
+    for e in aze.iter().zip(balise_pool) {
         if lastes_depth == e.0 .0 {
             temp_vec.push(e.1);
             temp_string.push_str(&e.0 .1);
@@ -1082,7 +1100,7 @@ fn main() {
     }
     to_vec.push(temp_vec.clone());
     to_print.push((lastes_depth, temp_string));
-    println!("{to_print:?}\n\n{to_vec:?}");
+    // println!("{to_print:?}\n\n{to_vec:?}");
     // use the fused vec to fold the groups
     let mut fuck_you: Vec<Vec<Balise>> = vec![];
     let mut las_depth = -1;
@@ -1122,26 +1140,76 @@ fn main() {
     // // println!("{fuck_you:#?}");
     let final_html = &fuck_you[0];
 
-    let mut to_file = String::from("");
-    // // here the group balises have an issue as there is the starter balise and the group balise
-    // let mut last_element: Balise = Default::default();
-    // for e in final_html {
-    //    //  match e {
+    // here the group balises have an issue as there is the starter balise and the group balise
+    let mut fused_balise_pool = vec![];
+    let mut last_element: Balise = Default::default();
+
+    // fn iter_ifaz<'a>(item: &'a mut Balise) -> Vec<&'a mut Balise> {
+    //     match item {
     //         Balise::Groupe {
     //             name,
-    //             params,
     //             inners,
+    //             params_in,
+    //             params_out,
+    //             after_in,
+    //             after_out,
+    //         } => {
+    //             let mut returned_vec = vec![item];
+    //             for mut e in inners.clone() {
+    //                 for f in iter_ifaz(&mut e) {
+    //                     returned_vec.push(f);
+    //                 }
+    //             }
+    //             returned_vec
+    //         }
+    //         Balise::Solo {
+    //             name,
+    //             params,
     //             after,
-    //         } => if last_element.name() == name {},
-    //         Balise::Solo { .. } => (),
+    //         } => vec![&mut item],
     //     }
-    //     last_element = *e;
     // }
+    for e in final_html {
+        match e {
+            Balise::Groupe {
+                name,
+                inners,
+                params_in,
+                params_out,
+                after_in,
+                after_out,
+            } => {
+                if last_element.name() == *name {
+                    println!("{:#?}", (e, &last_element));
+                    match last_element {
+                        Balise::Groupe { .. } => panic!("should never happened"),
+                        Balise::Solo {
+                            name: name_last,
+                            params,
+                            after,
+                        } => {
+                            let fused = Balise::Groupe {
+                                name: e.name(),
+                                inners: inners.to_vec(),
+                                params_in: params,
+                                params_out: params_out.to_vec(),
+                                after_in: after,
+                                after_out: after_out.to_string(),
+                            };
+                        }
+                    }
+                }
+            }
+            Balise::Solo { .. } => fused_balise_pool.push(last_element.clone()),
+        }
+        last_element = e.clone();
+    }
+    let mut to_file = String::from("");
 
-    // for e in final_html {
-    //     println!("{e}");
-    to_file += &format!("{e}");
-    // }
+    for e in final_html {
+        // println!("{e}");
+        to_file += &format!("{e}");
+    }
 
     {
         let path = std::path::Path::new("src/result2.html");

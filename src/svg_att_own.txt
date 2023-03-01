@@ -1,0 +1,1804 @@
+<a>
+Attributes
+download
+Instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. Value type: <string> ; Default value: none; Animatable: no
+
+href
+The URL or URL fragment the hyperlink points to. Value type: <URL> ; Default value: none; Animatable: yes
+
+hreflang
+The human language of the URL or URL fragment that the hyperlink points to. Value type: <string> ; Default value: none; Animatable: yes
+
+ping Experimental
+A space-separated list of URLs to which, when the hyperlink is followed, POST requests with the body PING will be sent by the browser (in the background). Typically used for tracking. For a more widely-supported feature addressing the same use cases, see Navigator.sendBeacon(). Value type: <list-of-URLs> ; Default value: none; Animatable: no
+
+referrerpolicy
+Which referrer to send when fetching the URL. Value type: no-referrer|no-referrer-when-downgrade|same-origin|origin|strict-origin|origin-when-cross-origin|strict-origin-when-cross-origin|unsafe-url ; Default value: none; Animatable: no
+
+rel
+The relationship of the target object to the link object. Value type: <list-of-Link-Types> ; Default value: none; Animatable: yes
+
+target
+Where to display the linked URL. Value type: _self|_parent|_top|_blank|<name> ; Default value: _self; Animatable: yes
+
+type
+A MIME type for the linked URL. Value type: <string> ; Default value: none; Animatable: yes
+
+xlink:href Deprecated
+The URL or URL fragment that the hyperlink points to. May be required for backwards compatibility for older browsers. Value type: <URL> ; Default value: none; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id, lang, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Document element event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+XLink Attributes
+Most notably: xlink:title
+
+ARIA Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<altGlyph>
+Attributes
+x Deprecated
+This attribute defines the corresponding absolute x-coordinates for rendering the element. Value type: <list-of-coordinates> ; Default value: Absolute x-coordinate of ancestor <text> or <tspan>; Animatable: yes
+
+y Deprecated
+This attribute defines the corresponding absolute y-coordinates for rendering the element. Value type: <list-of-coordinates> ; Default value: Absolute y-coordinate of ancestor <text> or <tspan>; Animatable: yes
+
+dx Deprecated
+This attribute indicates a shift along the x-axis on the position of the element. Value type: <list-of-coordinates> ; Default value: Relative x-coordinate of ancestor <text> or <tspan>; Animatable: yes
+
+dy Deprecated
+This attribute indicates a shift along the x-axis on the position of the element. Value type: <list-of-coordinates> ; Default value: Relative y-coordinate of ancestor <text> or <tspan>; Animatable: yes
+
+rotate Deprecated
+This attribute defines the supplemental rotation that will be applied to the element. Value type: <list-of-numbers> ; Default value: none; Animatable: yes (non-additive)
+
+glyphRef Deprecated
+The glyph identifier, the format of which is dependent on the format defined by the format attribute of the given font. Value type: <string> ; Default value: none; Animatable: no
+
+format Deprecated
+The format of the given font. Value type: <string> ; Default value: none; Animatable: no
+
+xlink:href
+An <iri> reference either to a <glyph> element in an SVG document or to an <altGlyphDef> element.
+
+If the reference is to a <glyph> element and that glyph is available, then that glyph is rendered instead of the character(s) that are inside of the <altGlyph> element.
+
+If the reference is to an <altGlyphDef> element, then if an appropriate set of alternate glyphs is located from processing the <altGlyphDef> element, then those alternate glyphs are rendered instead of the character(s) that are inside of the <altGlyph> element. Value type: <iri> ; Default value: none; Animatable: no
+
+Global attributes
+Core Attributes
+Most notably: id lang
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Document element event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, dominant-baseline, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, text-anchor, transform, vector-effect, visibility
+
+XLink Attributes
+xlink:href, xlink:type, xlink:role, xlink:arcrole, xlink:title, xlink:show, xlink:actuate
+
+
+
+<altGlyphDef>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+None.
+
+
+
+<altGlyphItem>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+None.
+
+
+
+<animate>
+Attributes
+Animation Attributes
+Animation timing attributes
+begin, dur, end, min, max, restart, repeatCount, repeatDur, fill
+Animation value attributes
+calcMode, values, keyTimes, keySplines, from, to, by
+Other Animation attributes
+Most notably: attributeName, additive, accumulate
+
+Animation event attributes
+Most notably: onbegin, onend, onrepeat
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes
+
+
+
+<animateMotion>
+Attributes
+keyPoints
+This attribute indicate, in the range [0,1], how far is the object along the path for each keyTimes associated values. Value type: <number>*; Default value: none; Animatable: no
+
+path
+This attribute defines the path of the motion, using the same syntax as the d attribute. Value type: <string>; Default value: none; Animatable: no
+
+rotate
+This attribute defines a rotation applied to the element animated along a path, usually to make it pointing in the direction of the animation. Value type: <number>|auto|auto-reverse; Default value: 0; Animatable: no
+
+Note: For <animateMotion>, the default value for the calcMode attribute is paced.
+
+Animation Attributes
+Animation timing attributes
+begin, dur, end, min, max, restart, repeatCount, repeatDur, fill
+Animation value attributes
+calcMode, values, keyTimes, keySplines, from, to, by
+Other Animation attributes
+Most notably: attributeName, additive, accumulate
+
+Animation event attributes
+Most notably: onbegin, onend, onrepeat
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes
+
+
+
+<animateTransform>
+Attributes
+Global attributes
+Conditional processing attributes
+Core attributes
+Animation event attributes
+Xlink attributes
+Animation attribute target attributes
+Animation timing attributes
+Animation value attributes
+Animation addition attributes
+Specific attributes
+by
+from
+to
+type
+
+
+
+<circle>
+Attributes
+cx
+The x-axis coordinate of the center of the circle. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+cy
+The y-axis coordinate of the center of the circle. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+r
+The radius of the circle. A value lower or equal to zero disables rendering of the circle. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+pathLength
+The total length for the circle's circumference, in user units. Value type: <number> ; Default value: none; Animatable: yes
+
+Note: Starting with SVG2, cx, cy, and r are Geometry Properties, meaning those attributes can also be used as CSS properties for that element.
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+ARIA Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<clipPath>
+Attributes
+clipPathUnits
+Defines the coordinate system for the contents of the <clipPath> element. Value type: userSpaceOnUse|objectBoundingBox ; Default value: userSpaceOnUse; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, display, fill, fill-opacity, fill-rule, filter, mask, opacity, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+
+
+<cursor>
+Attributes
+Global attributes
+Conditional processing attributes
+Core attributes
+Xlink attributes
+Specific attributes
+x Deprecated
+y Deprecated
+xlink:href
+
+
+
+<defs>
+Attributes
+Global attributes
+Core Attributes
+Most notably: id lang
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+
+
+<desc>
+Attributes
+This element only includes global attributes
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes
+
+
+
+<ellipse>
+Attributes
+cx
+The x position of the center of the ellipse. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+cy
+The y position of the center of the ellipse. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+rx
+The radius of the ellipse on the x axis. Value type: auto|<length>|<percentage> ; Default value: auto; Animatable: yes
+
+ry
+The radius of the ellipse on the y axis. Value type: auto|<length>|<percentage> ; Default value: auto; Animatable: yes
+
+pathLength
+This attribute lets specify the total length for the path, in user units. Value type: <number> ; Default value: none; Animatable: yes
+
+Note: Starting with SVG2 cx, cy, rx and ry are Geometry Properties, meaning those attributes can also be used as CSS properties for that element.
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+ARIA Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<feBlend>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+in2
+mode
+
+
+
+<feColorMatrix>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+type
+values
+
+
+
+<feComponentTransfer>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+
+
+
+<feComposite>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in: First input for the given filter primitive.
+in2: Second input for the given filter primitive (works the same as the in attribute).
+operator: over | in | out | atop | xor | lighter | arithmetic
+k1, k2, k3, k4: Values used for calculating the result pixel in arithmetic operator filter primitives.
+
+
+
+<feConvolveMatrix>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+order
+kernelMatrix
+divisor
+bias
+targetX
+targetY
+edgeMode
+kernelUnitLength
+preserveAlpha
+
+
+
+<feDiffuseLighting>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+surfaceScale
+diffuseConstant
+kernelUnitLength
+
+
+
+<feDisplacementMap>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+in2
+scale
+xChannelSelector
+yChannelSelector
+
+
+
+<feDistantLight>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+azimuth
+elevation
+
+
+
+<feFlood>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+flood-color
+flood-opacity
+
+
+
+<feFuncA>
+Attributes
+Global attributes
+Core attributes
+Transfer function attributes
+Specific attributes
+None.
+
+
+
+<feFuncB>
+Attributes
+Global attributes
+Core attributes
+Transfer function attributes
+Specific attributes
+None.
+
+
+
+<feFuncG>
+Attributes
+Global attributes
+Core attributes
+Transfer function attributes
+Specific attributes
+None.
+
+
+
+<feFuncR>
+Attributes
+Global attributes
+Core attributes
+Transfer function attributes
+Specific attributes
+None.
+
+
+
+<feGaussianBlur>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+stdDeviation
+edgeMode
+
+
+
+<feImage>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+XLink attributes
+class
+style
+Specific attributes
+preserveAspectRatio
+xlink:href
+
+
+
+<feMerge>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+None.
+
+
+
+<feMergeNode>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+in
+
+
+
+<feMorphology>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+operator
+radius
+
+
+
+<feOffset>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+dx
+dy
+
+
+
+<fePointLight>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+x
+y
+z
+
+
+
+<feSpecularLighting>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+surfaceScale
+specularConstant
+specularExponent
+kernelUnitLength
+
+
+
+<feSpotLight>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+x
+y
+z
+pointsAtX
+pointsAtY
+pointsAtZ
+specularExponent
+limitingConeAngle
+
+
+
+<feTile>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+in
+
+
+
+<feTurbulence>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+Filter primitive attributes
+class
+style
+Specific attributes
+baseFrequency
+numOctaves
+seed
+stitchTiles
+type
+
+
+
+<filter>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+XLink attributes
+class
+style
+Specific attributes
+x
+y
+width
+height
+filterRes Deprecated
+filterUnits
+primitiveUnits
+xlink:href
+
+
+
+<font>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+class
+style
+Specific attributes
+horiz-origin-x Deprecated
+horiz-origin-y Deprecated
+horiz-adv-x Deprecated
+vert-origin-x Deprecated
+vert-origin-y Deprecated
+vert-adv-y Deprecated
+
+
+
+<font-face>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+font-family Deprecated
+font-style Deprecated
+font-variant Deprecated
+font-weight Deprecated
+font-stretch Deprecated
+font-size Deprecated
+unicode-range Deprecated
+units-per-em Deprecated
+panose-1 Deprecated
+stemv Deprecated
+stemh Deprecated
+slope Deprecated
+cap-height Deprecated
+x-height Deprecated
+accent-height Deprecated
+ascent Deprecated
+descent Deprecated
+widths Deprecated
+bbox Deprecated
+ideographic Deprecated
+alphabetic Deprecated
+mathematical Deprecated
+hanging Deprecated
+v-ideographic Deprecated
+v-alphabetic Deprecated
+v-mathematical Deprecated
+v-hanging Deprecated
+underline-position Deprecated
+underline-thickness Deprecated
+strikethrough-position Deprecated
+strikethrough-thickness Deprecated
+overline-position Deprecated
+overline-thickness Deprecated
+
+
+
+<font-face-format>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+string Deprecated
+
+
+
+<font-face-name>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+name Deprecated
+
+
+
+<font-face-src>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+None.
+
+
+
+<font-face-uri>
+Attributes
+Global attributes
+Core attributes
+XLink attributes
+Specific attributes
+xlink:href
+
+
+
+<foreignObject>
+Attributes
+height
+The height of the foreignObject. Value type: <length>|<percentage> ; Default value: auto; Animatable: yes
+
+width
+The width of the foreignObject. Value type: <length>|<percentage> ; Default value: auto; Animatable: yes
+
+x
+The x coordinate of the foreignObject. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+y
+The y coordinate of the foreignObject. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+Note: Starting with SVG2, x, y, width, and height are Geometry Properties, meaning those attributes can also be used as CSS properties for that element.
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes, Document event attributes, Document element event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+Aria Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<g>
+Attributes
+This element only includes global attributes
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+Aria Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<glyph>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+class
+style
+Specific attributes
+d Deprecated
+horiz-adv-x Deprecated
+vert-origin-x Deprecated
+vert-origin-y Deprecated
+vert-adv-y Deprecated
+unicode Deprecated
+glyph-name Deprecated
+orientation Deprecated
+arabic-form Deprecated
+lang Deprecated
+
+
+
+<glyphRef>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+XLink attributes
+class
+style
+Specific attributes
+x Deprecated
+y Deprecated
+dx Deprecated
+dy Deprecated
+glyphRef Deprecated
+format Deprecated
+xlink:href
+
+
+
+<hkern>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+u1 Deprecated
+g1 Deprecated
+u2 Deprecated
+g2 Deprecated
+k Deprecated
+
+
+
+<image>
+Attributes
+Global attributes
+Conditional processing attributes
+Core attributes
+Graphical event attributes
+Presentation attributes
+Xlink attributes
+class
+style
+transform
+Specific attributes
+x: Positions the image horizontally from the origin.
+y: Positions the image vertically from the origin.
+width: The width the image renders at. Unlike HTML's <img>, this attribute is required.
+height: The height the image renders at. Unlike HTML's <img>, this attribute is required.
+href and xlink:href: Points at a URL for the image file.
+preserveAspectRatio: Controls how the image is scaled.
+crossorigin: Defines the value of the credentials flag for CORS requests.
+
+
+
+<line>
+Attributes
+x1
+Defines the x-axis coordinate of the line starting point. Value type: <length>|<percentage>|<number> ; Default value: 0; Animatable: yes
+
+x2
+Defines the x-axis coordinate of the line ending point. Value type: <length>|<percentage>|<number> ; Default value: 0; Animatable: yes
+
+y1
+Defines the y-axis coordinate of the line starting point. Value type: <length>|<percentage>|<number> ; Default value: 0; Animatable: yes
+
+y2
+Defines the y-axis coordinate of the line ending point. Value type: <length>|<percentage>|<number> ; Default value: 0; Animatable: yes
+
+pathLength
+Defines the total path length in user units. Value type: <number> ; Default value: none; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+ARIA Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<linearGradient>
+Attributes
+gradientUnits
+This attribute defines the coordinate system for attributes x1, x2, y1, y2 Value type: userSpaceOnUse|objectBoundingBox ; Default value: objectBoundingBox; Animatable: yes
+
+gradientTransform
+This attribute provides additional transformation to the gradient coordinate system. Value type: <transform-list> ; Default value: identity transform; Animatable: yes
+
+href
+This attribute defines a reference to another <linearGradient> element that will be used as a template. Value type: <URL> ; Default value: none; Animatable: yes
+
+spreadMethod
+This attribute indicates how the gradient behaves if it starts or ends inside the bounds of the shape containing the gradient. Value type: pad|reflect|repeat ; Default value: pad; Animatable: yes
+
+x1
+This attribute defines the x coordinate of the starting point of the vector gradient along which the linear gradient is drawn. Value type: <length-percentage> | <number>; Default value: 0%; Animatable: yes
+
+x2
+This attribute defines the x coordinate of the ending point of the vector gradient along which the linear gradient is drawn. Value type: <length-percentage> | <number>; Default value: 100%; Animatable: yes
+
+xlink:href
+Deprecated: This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the compatibility table at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.
+
+An <IRI> reference to another <linearGradient> element that will be used as a template. Value type: <IRI> ; Default value: none; Animatable: yes
+y1
+This attribute defines the y coordinate of the starting point of the vector gradient along which the linear gradient is drawn. Value type: <length-percentage> | <number>; Default value: 0%; Animatable: yes
+
+y2
+This attribute defines the y coordinate of the ending point of the vector gradient along which the linear gradient is drawn. Value type: <length-percentage> | <number>; Default value: 0%; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+XLink Attributes
+xlink:href, xlink:title
+
+
+
+<marker>
+Attributes
+markerHeight
+This attribute defines the height of the marker viewport. Value type: <length> ; Default value: 3; Animatable: yes
+
+markerUnits
+This attribute defines the coordinate system for the attributes markerWidth, markerHeight and the contents of the <marker>. Value type: userSpaceOnUse|strokeWidth ; Default value: strokeWidth; Animatable: yes
+
+markerWidth
+This attribute defines the width of the marker viewport. Value type: <length> ; Default value: 3; Animatable: yes
+
+orient
+This attribute defines the orientation of the marker relative to the shape it is attached to. Value type: auto|auto-start-reverse|<angle> ; Default value: 0; Animatable: yes
+
+preserveAspectRatio
+This attribute defines how the svg fragment must be deformed if it is embedded in a container with a different aspect ratio. Value type: (none| xMinYMin| xMidYMin| xMaxYMin| xMinYMid| xMidYMid| xMaxYMid| xMinYMax| xMidYMax| xMaxYMax) (meet|slice)? ; Default value: xMidYMid meet; Animatable: yes
+
+refX
+This attribute defines the x coordinate for the reference point of the marker. Value type: left|center|right|<coordinate> ; Default value: 0; Animatable: yes
+
+refY
+This attribute defines the y coordinate for the reference point of the marker. Value type: top|center|bottom|<coordinate> ; Default value: 0; Animatable: yes
+
+viewBox
+This attribute defines the bound of the SVG viewport for the current SVG fragment. Value type: <list-of-numbers> ; Default value: none; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+ARIA Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<mask>
+Attributes
+height
+This attribute defines the height of the masking area. Value type: <length> ; Default value: 120%; Animatable: yes
+
+maskContentUnits
+This attribute defines the coordinate system for the contents of the <mask>. Value type: userSpaceOnUse|objectBoundingBox ; Default value: userSpaceOnUse; Animatable: yes
+
+maskUnits
+This attribute defines the coordinate system for attributes x, y, width and height on the <mask>. Value type: userSpaceOnUse|objectBoundingBox ; Default value: objectBoundingBox; Animatable: yes
+
+x
+This attribute defines the x-axis coordinate of the top-left corner of the masking area. Value type: <coordinate> ; Default value: -10%; Animatable: yes
+
+y
+This attribute defines the y-axis coordinate of the top-left corner of the masking area. Value type: <coordinate> ; Default value: -10%; Animatable: yes
+
+width
+This attribute defines the width of the masking area. Value type: <length> ; Default value: 120%; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, display, fill, fill-opacity, fill-rule, filter, mask, opacity, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+
+
+<metadata>
+Attributes
+Global attributes
+Core attributes
+Global event attributes
+Specific attributes
+None.
+
+
+
+<missing-glyph>
+Attributes
+Global attributes
+Core attributes
+Presentation attributes
+class
+style
+Specific attributes
+d Deprecated
+horiz-adv-x Deprecated
+vert-origin-x Deprecated
+vert-origin-y Deprecated
+vert-adv-y Deprecated
+
+
+
+<mpath>
+Attributes
+Global attributes
+Core attributes
+Xlink attributes
+Specific attributes
+xlink:href
+
+
+
+<path>
+Attributes
+d
+This attribute defines the shape of the path. Value type: <string> ; Default value: ''; Animatable: yes
+
+pathLength
+This attribute lets authors specify the total length for the path, in user units. Value type: <number> ; Default value: none; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+ARIA Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<pattern>
+Attributes
+height
+This attribute determines the height of the pattern tile. Value type: <length>|<percentage>; Default value: 0; Animatable: yes
+
+href
+This attribute reference a template pattern that provides default values for the <pattern> attributes. Value type: <URL>; Default value: none; Animatable: yes
+
+patternContentUnits
+This attribute defines the coordinate system for the contents of the <pattern>. Value type: userSpaceOnUse|objectBoundingBox; Default value: userSpaceOnUse; Animatable: yes
+
+Note: This attribute has no effect if a viewBox attribute is specified on the <pattern> element.
+
+patternTransform
+This attribute contains the definition of an optional additional transformation from the pattern coordinate system onto the target coordinate system. Value type: <transform-list>; Default value: none; Animatable: yes
+
+patternUnits
+This attribute defines the coordinate system for attributes x, y, width, and height. Value type: userSpaceOnUse|objectBoundingBox; Default value: objectBoundingBox; Animatable: yes
+
+preserveAspectRatio
+This attribute defines how the SVG fragment must be deformed if it is embedded in a container with a different aspect ratio. Value type: (none| xMinYMin| xMidYMin| xMaxYMin| xMinYMid| xMidYMid| xMaxYMid| xMinYMax| xMidYMax| xMaxYMax) (meet|slice)? ; Default value: xMidYMid meet; Animatable: yes
+
+viewBox
+This attribute defines the bound of the SVG viewport for the pattern fragment. Value type: <list-of-numbers> ; Default value: none; Animatable: yes
+
+width
+This attribute determines the width of the pattern tile. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+x
+This attribute determines the x coordinate shift of the pattern tile. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+xlink:href Deprecated
+This attribute references a template pattern that provides default values for the <pattern> attributes. Value type: <URL>; Default value: none; Animatable: yes
+
+Note: For browsers implementing href, if both href and xlink:href are set, xlink:href will be ignored and only href will be used.
+
+y
+This attribute determines the y coordinate shift of the pattern tile. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+XLink Attributes
+Most notably: xlink:title
+
+
+
+<polygon>
+Attributes
+points
+This attribute defines the list of points (pairs of x,y absolute coordinates) required to draw the polygon. Value type: <number>+ ; Default value: ""; Animatable: yes
+
+pathLength
+This attribute lets specify the total length for the path, in user units. Value type: <number> ; Default value: none; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+ARIA Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<polyline>
+Attributes
+points
+This attribute defines the list of points (pairs of x,y absolute coordinates) required to draw the polyline Value type: <number>+ ; Default value: ""; Animatable: yes
+
+pathLength
+This attribute lets specify the total length for the path, in user units. Value type: <number> ; Default value: none; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+ARIA Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<radialGradient>
+Attributes
+cx
+This attribute defines the x coordinate of the end circle of the radial gradient. Value type: <length> ; Default value: 50%; Animatable: yes
+
+cy
+This attribute defines the y coordinate of the end circle of the radial gradient. Value type: <length> ; Default value: 50%; Animatable: yes
+
+fr
+This attribute defines the radius of the start circle of the radial gradient. The gradient will be drawn such that the 0% <stop> is mapped to the perimeter of the start circle. Value type: <length> ; Default value: 0%; Animatable: yes
+
+fx
+This attribute defines the x coordinate of the start circle of the radial gradient. Value type: <length> ; Default value: Same as cx; Animatable: yes
+
+fy
+This attribute defines the y coordinate of the start circle of the radial gradient. Value type: <length> ; Default value: Same as cy; Animatable: yes
+
+gradientUnits
+This attribute defines the coordinate system for attributes cx, cy, r, fx, fy, fr Value type: userSpaceOnUse|objectBoundingBox ; Default value: objectBoundingBox; Animatable: yes
+
+gradientTransform
+This attribute provides additional transformation to the gradient coordinate system. Value type: <transform-list> ; Default value: identity transform; Animatable: yes
+
+href
+This attribute defines a reference to another <radialGradient> element that will be used as a template. Value type: <URL> ; Default value: none; Animatable: yes
+
+r
+This attribute defines the radius of the end circle of the radial gradient. The gradient will be drawn such that the 100% <stop> is mapped to the perimeter of the end circle. Value type: <length> ; Default value: 50%; Animatable: yes
+
+spreadMethod
+This attribute indicates how the gradient behaves if it starts or ends inside the bounds of the shape containing the gradient. Value type: pad|reflect|repeat ; Default value: pad; Animatable: yes
+
+xlink:href
+Deprecated: This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the compatibility table at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.
+
+An <IRI> reference to another <radialGradient> element that will be used as a template. Value type: <IRI> ; Default value: none; Animatable: yes
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+XLink Attributes
+xlink:href, xlink:title
+
+
+
+<rect>
+Attributes
+x
+The x coordinate of the rect. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+y
+The y coordinate of the rect. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+width
+The width of the rect. Value type: auto|<length>|<percentage> ; Default value: auto; Animatable: yes
+
+height
+The height of the rect. Value type: auto|<length>|<percentage> ; Default value: auto; Animatable: yes
+
+rx
+The horizontal corner radius of the rect. Defaults to ry if it is specified. Value type: auto|<length>|<percentage> ; Default value: auto; Animatable: yes
+
+ry
+The vertical corner radius of the rect. Defaults to rx if it is specified. Value type: auto|<length>|<percentage> ; Default value: auto; Animatable: yes
+
+pathLength
+The total length of the rectangle's perimeter, in user units. Value type: <number> ; Default value: none; Animatable: yes
+
+Note: Starting with SVG2, x, y, width, height, rx and ry are Geometry Properties, meaning those attributes can also be used as CSS properties for that element.
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+Aria Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<script>
+Attributes
+crossorigin
+This attribute defines CORS settings as define for the HTML <script> element. Value type: <string>; Default value: ?; Animatable: yes
+
+href
+The URL to the script to load. Value type: <URL> ; Default value: none; Animatable: no
+
+type
+This attribute defines type of the script language to use. Value type: <string>; Default value: application/ecmascript; Animatable: no
+
+xlink:href Deprecated
+The URL to the script to load. Value type: <URL> ; Default value: none; Animatable: no
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes
+
+
+
+<set>
+Attributes
+to
+This attribute defines the value to be applied to the target attribute for the duration of the animation. The value must match the requirements of the target attribute. Value type: <anything>; Default value: none; Animatable: no
+
+Animation Attributes
+Animation timing attributes
+begin, dur, end, min, max, restart, repeatCount, repeatDur, fill
+Other Animation attributes
+Most notably: attributeName
+
+Animation event attributes
+Most notably: onbegin, onend, onrepeat
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes
+
+
+
+<stop>
+Attributes
+offset
+This attribute defines where the gradient stop is placed along the gradient vector. Value type: <number>|<percentage>; Default value: 0; Animatable: yes
+
+stop-color
+This attribute defines the color of the gradient stop. It can be used as a CSS property. Value type: currentcolor|<color>|<icccolor>; Default value: black; Animatable: yes
+
+stop-opacity
+This attribute defines the opacity of the gradient stop. It can be used as a CSS property. Value type: <opacity>; Default value: 1; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes
+
+Presentation Attributes
+Most notably: color, display, stop-color, stop-opacity, visibility
+
+
+
+<style>
+Attributes
+type
+This attribute defines type of the style sheet language to use as a media type string. Value type: <string>; Default value: text/css; Animatable: no
+
+media
+This attribute defines to which media the style applies. Value type: <string>; Default value: all; Animatable: no
+
+title
+This attribute the title of the style sheet which can be used to switch between alternate style sheets. Value type: <string>; Default value: none; Animatable: no
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes
+
+
+
+<svg>
+Attributes
+baseProfile Deprecated
+The minimum SVG language profile that the document requires. Value type: <string> ; Default value: none; Animatable: no
+
+contentScriptType Deprecated
+The default scripting language used by the SVG fragment. Value type: <string> ; Default value: application/ecmascript; Animatable: no
+
+contentStyleType Deprecated
+The default style sheet language used by the SVG fragment. Value type: <string> ; Default value: text/css; Animatable: no
+
+height
+The displayed height of the rectangular viewport. (Not the height of its coordinate system.) Value type: <length>|<percentage> ; Default value: auto; Animatable: yes
+
+preserveAspectRatio
+How the svg fragment must be deformed if it is displayed with a different aspect ratio. Value type: (none| xMinYMin| xMidYMin| xMaxYMin| xMinYMid| xMidYMid| xMaxYMid| xMinYMax| xMidYMax| xMaxYMax) (meet|slice)? ; Default value: xMidYMid meet; Animatable: yes
+
+version Deprecated
+Which version of SVG is used for the inner content of the element. Value type: <number> ; Default value: none; Animatable: no
+
+viewBox
+The SVG viewport coordinates for the current SVG fragment. Value type: <list-of-numbers> ; Default value: none; Animatable: yes
+
+width
+The displayed width of the rectangular viewport. (Not the width of its coordinate system.) Value type: <length>|<percentage> ; Default value: auto; Animatable: yes
+
+x
+The displayed x coordinate of the svg container. No effect on outermost svg elements. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+y
+The displayed y coordinate of the svg container. No effect on outermost svg elements. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+Note: Starting with SVG2, x, y, width, and height are Geometry Properties, meaning these attributes can also be used as CSS properties.
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes, Document event attributes, Document element event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+Aria Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<switch>
+Attributes
+Global attributes
+Conditional processing attributes
+Core attributes
+Graphical event attributes
+Presentation attributes
+class
+style
+transform
+
+
+
+<symbol>
+Attributes
+height
+This attribute determines the height of the symbol. Value type: <length>|<percentage> ; Default value: auto; Animatable: yes
+
+preserveAspectRatio
+This attribute defines how the svg fragment must be deformed if it is embedded in a container with a different aspect ratio. Value type: (none| xMinYMin| xMidYMin| xMaxYMin| xMinYMid| xMidYMid| xMaxYMid| xMinYMax| xMidYMax| xMaxYMax) (meet|slice)? ; Default value: xMidYMid meet; Animatable: yes
+
+refX
+This attribute determines the x coordinate of the reference point of the symbol. Value type: <length>|<percentage>|left|center|right ; Default value: None; Animatable: yes
+
+refY
+This attribute determines the y coordinate of the reference point of the symbol. Value type: <length>|<percentage>|top|center|bottom ; Default value: None; Animatable: yes
+
+viewBox
+This attribute defines the bound of the SVG viewport for the current symbol. Value type: <list-of-numbers> ; Default value: none; Animatable: yes
+
+width
+This attribute determines the width of the symbol. Value type: <length>|<percentage> ; Default value: auto; Animatable: yes
+
+x
+This attribute determines the x coordinate of the symbol. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+y
+This attribute determines the y coordinate of the symbol. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+Aria Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<text>
+Attributes
+x
+The x coordinate of the starting point of the text baseline. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+y
+The y coordinate of the starting point of the text baseline. Value type: <length>|<percentage> ; Default value: 0; Animatable: yes
+
+dx
+Shifts the text position horizontally from a previous text element. Value type: <length>|<percentage> ; Default value: none; Animatable: yes
+
+dy
+Shifts the text position vertically from a previous text element. Value type: <length>|<percentage> ; Default value: none; Animatable: yes
+
+rotate
+Rotates orientation of each individual glyph. Can rotate glyphs individually. Value type: <list-of-number> ; Default value: none; Animatable: yes
+
+lengthAdjust
+How the text is stretched or compressed to fit the width defined by the textLength attribute. Value type: spacing|spacingAndGlyphs; Default value: spacing; Animatable: yes
+
+textLength
+A width that the text should be scaled to fit. Value type: <length>|<percentage> ; Default value: none; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style, font-family, font-size, font-size-adjust, font-stretch, font-style, font-variant, font-weight
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, dominant-baseline, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, text-anchor, transform, vector-effect, visibility
+
+Aria Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<textPath>
+Attributes
+href
+The URL to the path or basic shape on which to render the text. If the path attribute is set, href has no effect. Value type: <URL> ; Default value: none; Animatable: yes
+
+lengthAdjust
+Where length adjustment should be applied to the text: the space between glyphs, or both the space and the glyphs themselves. Value type: spacing|spacingAndGlyphs; Default value: spacing; Animatable: yes
+
+method
+Which method to render individual glyphs along the path. Value type: align|stretch ; Default value: align; Animatable: yes
+
+path Experimental
+The path on which the text should be rendered. Value type: <path_data> ; Default value: none; Animatable: yes
+
+side Experimental
+Which side of the path the text should be rendered. Value type: left|right ; Default value: left; Animatable: yes
+
+spacing
+How space between glyphs should be handled. Value type: auto|exact ; Default value: exact; Animatable: yes
+
+startOffset
+How far the beginning of the text should be offset from the beginning of the path. Value type: <length>|<percentage>|<number> ; Default value: 0; Animatable: yes
+
+textLength
+The width of the space into which the text will render. Value type: <length>|<percentage>|<number> ; Default value: auto; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+ARIA Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<title>
+Attributes
+This element only includes global attributes
+
+Global attributes
+Core Attributes
+Most notably: id
+
+Styling Attributes
+class, style
+Event Attributes
+Global event attributes, Document element event attributes
+
+
+
+<tref>
+Attributes
+Global attributes
+Conditional processing attributes
+Core attributes
+Graphical event attributes
+Presentation attributes
+Xlink attributes
+class
+style
+Specific attributes
+xlink:href
+
+
+
+<tspan>
+Attributes
+x
+The x coordinate of the starting point of the text baseline. Value type: <length>|<percentage> ; Default value: none; Animatable: yes
+
+y
+The y coordinate of the starting point of the text baseline. Value type: <length>|<percentage> ; Default value: none; Animatable: yes
+
+dx
+Shifts the text position horizontally from a previous text element. Value type: <length>|<percentage> ; Default value: none; Animatable: yes
+
+dy
+Shifts the text position vertically from a previous text element. Value type: <length>|<percentage> ; Default value: none; Animatable: yes
+
+rotate
+Rotates orientation of each individual glyph. Can rotate glyphs individually. Value type: <list-of-number> ; Default value: none; Animatable: yes
+
+lengthAdjust
+How the text is stretched or compressed to fit the width defined by the textLength attribute. Value type: spacing|spacingAndGlyphs; Default value: spacing; Animatable: yes
+
+textLength
+A width that the text should be scaled to fit. Value type: <length>|<percentage> ; Default value: none; Animatable: yes
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, dominant-baseline, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, text-anchor, vector-effect, visibility
+
+Aria Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+
+
+<use>
+Attributes
+href
+The URL to an element/fragment that needs to be duplicated.
+Value type: <URL> ; Default value: none; Animatable: yes
+
+xlink:href Deprecated
+An <IRI> reference to an element/fragment that needs to be duplicated. If both href and xlink:href are present, the value given by href is used.
+Value type: <IRI> ; Default value: none; Animatable: yes
+
+x
+The x coordinate of an additional final offset transformation applied to the <use> element.
+Value type: <coordinate> ; Default value: 0; Animatable: yes
+
+y
+The y coordinate of an additional final offset transformation applied to the <use> element.
+Value type: <coordinate> ; Default value: 0; Animatable: yes
+
+width
+The width of the use element.
+Value type: <length> ; Default value: 0; Animatable: yes
+
+height
+The height of the use element.
+Value type: <length> ; Default value: 0; Animatable: yes
+
+Note: width, and height have no effect on use elements, unless the element referenced has a viewBox - i.e. they only have an effect when use refers to a svg or symbol element.
+
+Note: Starting with SVG2, x, y, width, and height are Geometry Properties, meaning those attributes can also be used as CSS properties for that element.
+
+Global attributes
+Core Attributes
+Most notably: id, tabindex
+
+Styling Attributes
+class, style
+Conditional Processing Attributes
+Most notably: requiredExtensions, systemLanguage
+
+Event Attributes
+Global event attributes, Graphical event attributes
+
+Presentation Attributes
+Most notably: clip-path, clip-rule, color, color-interpolation, color-rendering, cursor, display, fill, fill-opacity, fill-rule, filter, mask, opacity, pointer-events, shape-rendering, stroke, stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-miterlimit, stroke-opacity, stroke-width, transform, vector-effect, visibility
+
+ARIA Attributes
+aria-activedescendant, aria-atomic, aria-autocomplete, aria-busy, aria-checked, aria-colcount, aria-colindex, aria-colspan, aria-controls, aria-current, aria-describedby, aria-details, aria-disabled, aria-dropeffect, aria-errormessage, aria-expanded, aria-flowto, aria-grabbed, aria-haspopup, aria-hidden, aria-invalid, aria-keyshortcuts, aria-label, aria-labelledby, aria-level, aria-live, aria-modal, aria-multiline, aria-multiselectable, aria-orientation, aria-owns, aria-placeholder, aria-posinset, aria-pressed, aria-readonly, aria-relevant, aria-required, aria-roledescription, aria-rowcount, aria-rowindex, aria-rowspan, aria-selected, aria-setsize, aria-sort, aria-valuemax, aria-valuemin, aria-valuenow, aria-valuetext, role
+
+XLink Attributes
+xlink:href, xlink:title
+
+
+
+<view>
+Attributes
+Global attributes
+Aria attributes
+Core attributes
+Global event attributes
+Specific attributes
+viewBox
+preserveAspectRatio
+zoomAndPan Deprecated Non-standard
+viewTarget Deprecated
+
+
+
+<vkern>
+Attributes
+Global attributes
+Core attributes
+Specific attributes
+u1 Deprecated
+g1 Deprecated
+u2 Deprecated
+g2 Deprecated
+k Deprecated
+
+
+

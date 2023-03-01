@@ -2,6 +2,7 @@
 name = "cats-svg"
 version = "0.1.0"
 edition = "2021"
+default-run="cats-svg"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -15,3 +16,7 @@ csv = "*"
 [[bin]]
 name = "transform"
 path = "src/transform.rs"
+
+[[bin]]
+name = "svg2_all"
+path = "src/svg2_all.rs"
